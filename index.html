@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Rutas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <img src="image/icon-day.jpg" alt="icono beer tan" class="image-noche">
+    <h1>Camioneros Beer Tan</h1>
+    <div id="clock" class="clock"></div>
+    <!-- El widget del clima se actualizará con los datos obtenidos de Meteosource -->
+    <div id="weather" class="weather"></div>
+  </header>
+
+  <main>
+    <!-- 🔥 Nuevo botón para el Check List de Camión -->
+    <section class="checklist-section">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScMymDnmv8z7FNxvrxtFmHzzdnQD0FuPXoMUsxYWRmagdkF7Q/viewform" 
+        target="_blank" 
+        class="checklist-button">
+          ✅ Check List Camión
+      </a>
+    </section>
+
+    <section class="filters">
+      <label for="driver-select">Filtrar por Chofer:</label>
+      <select id="driver-select">
+        <option value="">Todos</option>
+      </select>
+
+      <div class="date-filter">
+        <label>
+          <input type="radio" name="date-filter-type" value="day" checked> Día
+        </label>
+        <label>
+          <input type="radio" name="date-filter-type" value="month"> Mes
+        </label>
+      </div>
+
+      <div class="date-inputs">
+        <input type="date" id="date-input">
+        <input type="month" id="month-input" style="display: none;">
+      </div>
+    </section>
+
+    <section class="summary">
+      <h2>Promedio de Tiempo en Ruta (hora)</h2>
+      <p id="average-time"></p>
+    </section>
+
+    <section class="summary">
+      <h2>Clientes Visitados</h2>
+      <p id="visited-clients"></p>
+    </section>
+
+    <section class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Chofer</th>
+            <th>Fecha</th>
+            <th>Hora de Salida</th>
+            <th>Hora de Llegada</th>
+            <th>Distancia (km)</th>
+            <th>Adherencia Click</th>
+            <th>Adherencia Secuencia</th>
+            <th>Duración de Visita (minutos)</th>
+            <th>Clientes Visitados</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+          <!-- Datos dinámicos aquí -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="charts">
+      <h2>Gráficos</h2>
+      <div class="chart-container">
+        <canvas id="chartDistance"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="chartAdherence"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Beer Tan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

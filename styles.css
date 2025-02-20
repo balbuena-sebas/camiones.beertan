@@ -1,0 +1,250 @@
+
+
+/* Configuración global */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Variables base */
+:root {
+  --primary-color: #7771e2;
+  --secondary-color: #ac84d1;
+  --card-background: rgba(255, 255, 255, 0.85);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Día: fondo blanco, texto oscuro */
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1F2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Noche: se añade la clase "night" al body */
+body.night {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.image-noche{
+  max-width: 10%;
+
+}
+
+/* Forzar que los datos de la tabla se muestren siempre en negro excepto la fecha */
+.data-table th,
+.data-table td {
+  color: #1F2937 !important;
+  word-wrap: break-word; /* Permite que el texto largo se divida */
+  overflow-wrap: break-word;
+  white-space: normal; /* Asegura que el contenido largo se divida en líneas */
+}
+
+/* Botón Check List */
+.checklist-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.checklist-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checklist-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.checklist-button:active {
+  transform: scale(0.95);
+}
+
+/* Para la columna de fecha, que se muestre en una sola línea */
+.table-date {
+  white-space: nowrap;
+}
+
+/* Header centrado */
+header {
+  width: 100%;
+  max-width: 1200px;
+  background: transparent;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Reloj */
+.clock {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Widget del clima: ocupa todo el ancho disponible y está centrado */
+.weather {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+.weather-widget {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background: var(--card-background);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  border-radius: 10px;
+}
+.weather-widget h3 {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.weather-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.weather-day .weather-date {
+  font-weight: bold;
+}
+.weather-day .weather-emoji {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.weather-day .weather-temp {
+  display: block;
+}
+
+/* Contenedor principal */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Tarjetas (filtros, resúmenes, tabla, gráficos) */
+.filters, .summary, .data-table, .charts {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  background: var(--card-background);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.filters select,
+.filters input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.date-filter {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Tabla */
+.data-table {
+  overflow-x: auto; /* Para permitir scroll horizontal si es necesario */
+}
+.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.data-table th,
+.data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.data-table th {
+  background-color: var(--primary-color);
+  color: #1F2937;
+  cursor: pointer; /* Cambia el cursor a una mano al pasar el mouse */
+}
+
+/* Gráficos */
+.chart-container {
+  position: relative;
+  height: 400px;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: transparent;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Responsivo: Ajuste en pantallas pequeñas */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  .clock {
+    font-size: 1.2rem;
+  }
+  .weather-widget {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .filters {
+    flex-direction: column;
+  }
+  .data-table th,
+  .data-table td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .chart-container {
+    height: 300px;
+  }
+}
