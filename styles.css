@@ -38,6 +38,7 @@ body.night {
 
 .image-noche{
   max-width: 10%;
+  mix-blend-mode: color-burn;
 
 }
 
