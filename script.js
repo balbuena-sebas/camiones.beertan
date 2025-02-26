@@ -193,8 +193,8 @@ function updateTable() {
     row.innerHTML = `
       <td>${item["Driver Name"] || ""}</td>
       <td class="table-date">${formatDate(item["Planned Route Start Date"]) || ""}</td>
-      <td>${item["Actual Route Departure Time"] || ""}</td>
-      <td>${item["Actual Route Arrival Time"] || ""}</td>
+      <td>${item["Actual Route Departure Time"] && item["Actual Route Departure Time"] !== "00:00:00" ? item["Actual Route Departure Time"] : ""}</td>
+      <td>${item["Actual Route Arrival Time"] && item["Actual Route Arrival Time"] !== "00:00:00" ? item["Actual Route Arrival Time"] : ""}</td>
       <td>${item["Total Driven Meters"] ? (item["Total Driven Meters"] / 1000).toFixed(2) : ""}</td>
       <td>${item["Driver Click Score"] ? (item["Driver Click Score"] * 100).toFixed(2) + "%" : ""}</td>
       <td>${item["Sequence Adherence"] ? (item["Sequence Adherence"] * 100).toFixed(2) + "%" : ""}</td>
