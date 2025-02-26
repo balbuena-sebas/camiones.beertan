@@ -37,7 +37,7 @@ body.night {
 }
 
 .image-noche{
-  max-width: 10%;
+  width:10%;
 }
 
 /* Forzar que los datos de la tabla se muestren siempre en negro excepto la fecha */
