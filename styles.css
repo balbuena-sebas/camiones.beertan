@@ -38,10 +38,7 @@ body.night {
 
 .image-noche{
   max-width: 10%;
-  aspect-ratio: 4/3;
-  object-fit: contain;
-  mix-blend-mode: color-burn;
-
+  max-height: 10%;
 }
 
 /* Forzar que los datos de la tabla se muestren siempre en negro excepto la fecha */
