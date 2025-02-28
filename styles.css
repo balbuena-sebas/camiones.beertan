@@ -39,7 +39,6 @@ body.night {
 .image-noche{
   width:10%;
   mix-blend-mode:darken;
-  aspect-ratio: 4/3;
   object-fit: contain;
 }
 
