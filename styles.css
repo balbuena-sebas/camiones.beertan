@@ -38,7 +38,6 @@ body.night {
 .image-noche{
   width:10%;
   mix-blend-mode:darken;
-  object-fit: contain;
 }
 
 /* Forzar que los datos de la tabla se muestren siempre en negro excepto la fecha */
