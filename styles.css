@@ -179,7 +179,7 @@ main {
 .filters select,
 .filters input {
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #7d7c7c;
   border-radius: 5px;
 }
 .date-filter {
