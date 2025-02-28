@@ -165,6 +165,7 @@ main {
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 5px var(--shadow-color);
+  color: #7d7c7c;
 }
 
 /* Filtros */
