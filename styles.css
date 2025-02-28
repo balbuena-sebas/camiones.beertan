@@ -220,6 +220,9 @@ footer {
   background: transparent;
   font-size: 0.9rem;
   text-shadow: 1px 1px 2px #000;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
 }
 
 /* Responsivo: Ajuste en pantallas pequeñas */
