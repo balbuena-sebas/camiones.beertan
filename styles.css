@@ -32,7 +32,7 @@ body {
 
 /* Noche: se añade la clase "night" al body */
 body.night {
-  background-color: #141414;
+  background-color: #97b9dd;
   color: #ffffff;
 }
 
