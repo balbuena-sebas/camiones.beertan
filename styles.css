@@ -17,6 +17,31 @@ html {
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para el navbar de choferes */
+#driver-navbar {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
+}
+#driver-navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+#driver-navbar li {
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+#driver-navbar li:hover {
+  color: var(--secondary-color);
+}
+
+
 /* Día: fondo blanco, texto oscuro */
 body {
   font-family: Verdana, sans-serif;

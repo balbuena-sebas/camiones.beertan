@@ -1,6 +1,56 @@
 // Ruta al archivo JSON de rutas
 const dataURL = "consolidated_data.json";
 
+// Función para poblar el navbar de choferes
+function populateDriverNavbar() {
+  const drivers = [...new Set(data.map(item => item["Driver Name"]))].filter(name => name);
+  const navbarList = document.getElementById("driver-navbar-list");
+  // Limpia la lista antes de agregar elementos nuevos
+  navbarList.innerHTML = "";
+
+  drivers.forEach(driver => {
+    const li = document.createElement("li");
+    li.textContent = driver;
+    li.classList.add("driver-nav-item");
+    // Al hacer clic se solicita contraseña y se filtra información
+    li.addEventListener("click", () => {
+      const enteredPassword = prompt(`Ingrese contraseña para ${driver}:`);
+      // Aquí defines la lógica para validar la contraseña.
+      // Por ejemplo, podrías tener una contraseña fija "beer2025" para todos:
+      if (enteredPassword === "beer2025") {
+        // Filtrar los datos y actualizar la vista, por ejemplo:
+        driverSelect.value = driver;
+        updateTable();
+      } else {
+        alert("Contraseña incorrecta. Intente nuevamente.");
+      }
+    });
+    navbarList.appendChild(li);
+  });
+}
+
+// Luego, después de cargar los datos, asegúrate de llamar a ambas funciones
+// Para poblar el select y el navbar:
+function initializeDashboard() {
+  fetch(dataURL)
+    .then(response => response.json())
+    .then(jsonData => {
+      data = jsonData; // o el objeto correcto según la estructura de tu JSON
+      populateDriverSelect();  // ya implementada
+      populateDriverNavbar();  // nueva función
+      updateTable();
+    })
+    .catch(error => console.error("Error cargando los datos:", error));
+
+  startClock();
+  updateDateInputsVisibility();
+  // Otros inicios que tengas...
+}
+
+// Llamada de inicialización al cargar la página
+window.onload = initializeDashboard;
+
+
 // Elementos del DOM
 const driverSelect = document.getElementById("driver-select");
 const dateInput = document.getElementById("date-input");
